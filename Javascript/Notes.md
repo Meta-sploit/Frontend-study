@@ -28,3 +28,6 @@ In JavaScript, the call stack is a mechanism that keeps track of the execution c
 
 JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
 
+JavaScript is a loosely typed language, you are not required to correctly predict the kind of data that will be kept in a variable. Depending on the information you supply to a variable (such as this ‘ ‘ or " " to signify string values), JavaScript will automatically type it
+    var a = 0
+        a = "abc"
