@@ -1,8 +1,8 @@
 /**
  * Let and const variables can not be accessed before their initialization unlike var variables, although they are hoisted,
- * it's because they will not be attached to global execution context, instead we will see them in ...
+ * it's because they will not be attached to global execution context, instead we will see them in Scripts
  * 
- * window between let and const variable get hoisted and initialized is called as temporal dead zone
+ * Window between let and const variable get hoisted and initialized is called as temporal dead zone
  * this window can be reduced to zero by initializing all the variables on the top of code.
  * 
  * In code it's better to use const and let as much as possible to avoid the unexpected error as these will throw error 
