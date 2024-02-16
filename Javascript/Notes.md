@@ -1,33 +1,68 @@
-everything in javascript executed in execution context
+# Notes.md
+
+## Execution Context
+
+1. **Memory -> Variable Environment:**
+   - Stores variables and functions in key-value pairs.
+
+2. **Code -> Thread of Execution:**
+   - Reads and executes every line of code.
+
+## JavaScript as a Single-Threaded Synchronous Language
+
+- It executes a single line of code at a time and follows a specific order.
+
+## How Code Execution Works in JavaScript
+
+1. When a JavaScript code block is running, an execution context is created.
+   - All variables and functions are stored in memory.
+   - Variables are stored as global variables with an initial value of `undefined`.
+
+2. During the execution phase:
+   - The code is scanned.
+   - Variable values are assigned.
+   - Functions are treated as code blocks, creating new execution contexts.
+
+## Call Stack in JavaScript
+
+- A mechanism that keeps track of the execution context.
+- Follows the Last In, First Out (LIFO) principle.
+- Manages function calls, tracks the current execution point, and handles the flow of execution.
+
+## JavaScript Hoisting
+
+- Refers to the process of moving declarations to the top of their scope before execution.
+- Applies to functions, variables, classes, or imports.
+
+## Loosely Typed Nature of JavaScript
+
+- JavaScript is loosely typed, allowing variables to dynamically change their type based on the assigned value.
+  ```javascript
+  var a = 0;
+  a = "abc";
 
 
-Execution context
-    1. Memory -> variable environment 
-       stores variable, functions in key value pair  
-    
-    2. Code --> thread of execution
-       read and execute every line of codes 
+Let is block scoped while var is not.
+Var is function scoped 
 
-Javascript is single threaded synchronous language.
-    means it can execute single line of code in a thread 
-    at once also it will execite in specific order 
+## Scope:
 
+- var: Variables declared with var are function-scoped, meaning they are only accessible within the function where they are defined. If a variable is declared with var outside any function, it becomes a global variable.
+  ```javascript
+  function example() {
+    if (true) {
+        var x = 10;
+        console.log(x); // 10
+    }
+    console.log(x); // 10 (accessible outside the block)
+  }  
 
-How the code execution works in javascript
-
-    When a javascript code block is runing execution context will be created
-    and for once all the variable and function(it will store the full function)
-    will be stored in the memory where variable will be stored as global variable with value undefined
-
-    When for the second phase code will be scaned during the Execution
-    then value of the variable will be assigned and if there is function then it 
-    will be treated as a code block and again execution context will be created and so on.
-
-    
-In JavaScript, the call stack is a mechanism that keeps track of the execution context of a program. It follows the Last In, First Out (LIFO) principle, where the last function called is the first one to be resolved. The call stack is used to manage function calls, track the current execution point, and handle the flow of execution.
-
-JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
-
-JavaScript is a loosely typed language, you are not required to correctly predict the kind of data that will be kept in a variable. Depending on the information you supply to a variable (such as this ‘ ‘ or " " to signify string values), JavaScript will automatically type it
-    var a = 0
-        a = "abc"
+- let: Variables declared with let are block-scoped, meaning they are only accessible within the block (enclosed by curly braces) where they are defined.
+  ```javascript
+  function example() {
+    if (true) {
+        let y = 20;
+        console.log(y); // 20
+    }
+    console.log(y); // ReferenceError: y is not defined
+  }
