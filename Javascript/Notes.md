@@ -66,3 +66,18 @@ Var is function scoped
     }
     console.log(y); // ReferenceError: y is not defined
   }
+
+
+## js is synchronous language the how it manages async calls
+
+JavaScript is often described as a single-threaded, synchronous language, meaning that it processes one task at a time and executes code in a sequential manner. However, JavaScript also supports asynchronous programming through mechanisms like callbacks, Promises, and async/await.
+
+When JavaScript encounters an asynchronous operation, such as making an HTTP request with fetch or setting a timer with setTimeout, it doesn't wait for the operation to complete before moving on to the next line of code. Instead, it delegates the asynchronous task to the browser or runtime environment, and continues executing other code.
+
+When the asynchronous operation completes, a callback function associated with it is placed in the task queue. JavaScript's event loop, which is part of the runtime environment, continuously checks the call stack for any pending tasks. If the call stack is empty, it takes the first task from the task queue and pushes it onto the call stack for execution. This allows JavaScript to handle asynchronous operations without blocking the main execution thread.
+
+In summary, while JavaScript executes code synchronously in a single thread, it can manage asynchronous calls using mechanisms like callbacks and event loop, allowing it to handle I/O operations efficiently without blocking the main thread.
+
+
+
+
