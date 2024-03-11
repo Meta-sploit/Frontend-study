@@ -1,0 +1,27 @@
+javascript Runtime Environment :-
+  javascript engine 
+    which contains many things 
+    1. Memory heap
+    2. Call stack
+
+  Callback queue
+ 
+  Microtask queue
+
+  EventLoop
+
+  Browser Api's
+    1. Console
+    2. setTimeout
+    3. EventListeners
+  
+
+JS engine
+  code -> parsing -> compilation -> Execution
+
+  while parsing it will convert the code to AST(abstract sytanx tree)
+  on Compilation js uses Interpreter and Compiler both, JIT Compiler
+  Also there is garbage collector (Mark and Sweep algo)
+
+
+Need to go through all this...
