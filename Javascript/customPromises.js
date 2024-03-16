@@ -18,6 +18,24 @@ function validateCart(cart) {
   return true;
 }
 
+function processToPayment(orderId) {
+  return new Promise(function (resolve, reject) {
+    resolve("Payment is successfull for ", orderId);
+  });
+}
+
 createOrder(myCart)
-  .then((orderId) => console.log(orderId))
-  .catch((err) => console.log(err));
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId;
+  })
+  .catch((err) => console.log(err))
+  .then(function (orderId) {
+    return processToPayment(orderId);
+  })
+  .then(function (notification) {
+    console.log(notification);
+  })
+  .then(() => {
+    console.log("Congratulations");
+  });
